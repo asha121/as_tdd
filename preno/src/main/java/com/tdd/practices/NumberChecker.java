@@ -1,7 +1,11 @@
 package com.tdd.practices;
 
-public class NumberChecker {
+public class NumberChecker implements INumberChecker {
 
+	/* (non-Javadoc)
+	 * @see com.tdd.practices.INumberChecker#isPrefectNumber(int)
+	 */
+	@Override
 	public Boolean isPrefectNumber(int number) {
 		boolean isPerfect = false;
 		if (number > 1) {

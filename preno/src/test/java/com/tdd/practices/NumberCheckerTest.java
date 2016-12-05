@@ -12,7 +12,7 @@ import junit.framework.Assert;
 @ContextConfiguration(classes = NumberChecker.class, loader = AnnotationConfigContextLoader.class)
 public class NumberCheckerTest {
 	@Autowired
-	private NumberChecker numChecker;
+	private INumberChecker numChecker;
 
 	@Test
 	public void testIs_6_PrefectNumber() {
