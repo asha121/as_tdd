@@ -18,7 +18,7 @@ import com.tdd.practices.rps.Rock;
 public class GameTest {
 
 	@Autowired
-	Game game;
+	IGame game;
 
 	@Test
 	public void testRockCrushScissor() {

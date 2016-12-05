@@ -4,8 +4,9 @@ import com.tdd.practices.rps.Paper;
 import com.tdd.practices.rps.Player;
 import com.tdd.practices.rps.Rock;
 
-public class Game {
+public class Game implements IGame {
 
+	@Override
 	public Player WinnerBetween(String fPlayer, String sPlayer) {
 		Player player = null;
 		if (fPlayer.equals(sPlayer)) {
