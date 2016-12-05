@@ -8,7 +8,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-import com.tdd.practices.rpc.Rock;
+import com.tdd.practices.rps.Player;
+import com.tdd.practices.rps.Rock;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Game.class, loader = AnnotationConfigContextLoader.class)
@@ -21,14 +22,12 @@ public class GameTest {
 
 	@Test
 	public void testRockCrushScissor() {
-		Rock rock= new Rock("Rock","rock crushes scissors -> rock wins");
-		Assert.assertEquals(rock.getMsg(), ((Rock) game.WinnerBetween("Rock", "Scissor")).getMsg());
-		Assert.assertEquals(rock.getName(), ((Rock) game.WinnerBetween("Rock", "Scissor")).getName());
-	}
-
-	@Test
-	public void testScissorNeverCutRock() {
-		Assert.assertNotSame("Scissor", game.WinnerBetween("Rock", "Scissor"));
+		Player rock= new Rock("Rock","rock crushes scissors -> rock wins");
+		Assert.assertEquals(rock.getMsg(), (game.WinnerBetween("Rock", "Scissor")).getMsg());
+		Assert.assertEquals(rock.getName(), (game.WinnerBetween("Rock", "Scissor")).getName());
+		Assert.assertNotSame("Scissor", game.WinnerBetween("Rock", "Scissor").getName());
+		Assert.assertNotSame("Scissor", game.WinnerBetween("Rock", "Scissor").getMsg());
+		Assert.assertSame(rock.getClass(), game.WinnerBetween("Rock", "Scissor").getClass());
 	}
 
 	@Test
