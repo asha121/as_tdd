@@ -1,10 +1,12 @@
 package com.tdd.practices;
 
+import com.tdd.practices.rpc.Rock;
+
 public class Game {
 
-	public String WinnerBetween(String string, String string2) {
+	public Object WinnerBetween(String string, String string2) {
 		// TODO Auto-generated method stub
-		return "Rock";
+		return new Rock("Rock","rock crushes scissors -> rock wins");
 	}
 
 }
