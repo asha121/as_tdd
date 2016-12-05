@@ -17,7 +17,6 @@ public class NumberChecker {
 				isPerfect = false;
 			}
 		}
-
 		return isPerfect;
 	}
 
